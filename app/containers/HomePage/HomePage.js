@@ -9,32 +9,16 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import "./style.scss";
 
-export default class HomePage extends React.PureComponent {
-  // eslint-disable-line react/prefer-stateless-function
-  /**
-   * when initial state username is not null, submit the form to load repos
-   */
-  componentDidMount() {
-    const { username, onSubmitForm } = this.props;
-    if (username && username.trim().length > 0) {
-      onSubmitForm();
-    }
-  }
 
-  render() {
-    const {
-      loading,
-      error,
-      repos,
-      username,
-      onChangeUsername,
-      onSubmitForm
-    } = this.props;
- 
-    return (
-      <article>
+//components
+
+import MovieVisualisation from '../../components/MovieVisualisation'
+
+function HomePage() {
+  return (
+    <article>
         <Helmet>
-          <title>Home Page</title>
+          <title>Home page</title>
           <meta
             name="description"
             content="A React.js Boilerplate application homepage"
@@ -42,24 +26,15 @@ export default class HomePage extends React.PureComponent {
         </Helmet>
         <div className="home-page">
           <section>
-            <form onSubmit={onSubmitForm}>
-              <label htmlFor="username">
-                Form <span className="at-prefix">@</span>
-                <input
-                  id="username"
-                  type="text"
-                  placeholder="flexdinesh"
-                  value={username}
-                  onChange={onChangeUsername}
-                />
-              </label>
-            </form>
+            <MovieVisualisation />
           </section>
         </div>
       </article>
-    );
-  }
+  );
 }
+
+export default HomePage 
+
 
 HomePage.propTypes = {
   loading: PropTypes.bool,
