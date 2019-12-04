@@ -1,7 +1,7 @@
 .header {
   .nav-bar {
     text-align: center;
-    border-bottom: 2px solid #41addd;
+    border-bottom: 2px solid #fff;
   }
 
   .router-link {
@@ -18,10 +18,10 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 16px;
-    color: #41addd;
+    color: #fff;
 
     &:active {
-      background: #41addd;
+      background: #fff;
       color: #fff;
     }
   }
