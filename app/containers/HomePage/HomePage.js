@@ -7,7 +7,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
-import ReposList from "components/ReposList";
 import "./style.scss";
 
 export default class HomePage extends React.PureComponent {
@@ -31,12 +30,7 @@ export default class HomePage extends React.PureComponent {
       onChangeUsername,
       onSubmitForm
     } = this.props;
-    const reposListProps = {
-      loading,
-      error,
-      repos
-    };
-
+ 
     return (
       <article>
         <Helmet>
@@ -60,7 +54,6 @@ export default class HomePage extends React.PureComponent {
                 />
               </label>
             </form>
-            <ReposList {...reposListProps} />
           </section>
         </div>
       </article>

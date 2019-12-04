@@ -27,6 +27,7 @@ export default class FeaturePage extends React.Component {
           />
         </Helmet>
         <h1>Features</h1>
+
             </div>
     );
   }
