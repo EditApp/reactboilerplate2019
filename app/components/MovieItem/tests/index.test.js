@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import MovieVisualisation from '../index';
+import MovieItem from '../index';
 
 describe('<movieBlock />', () => {
-  it('should render the MovieVisualisation notice', () => {
-    const renderedComponent = shallow(<MovieVisualisation />);
+  it('should render the MovieItem notice', () => {
+    const renderedComponent = shallow(<MovieItem />);
     expect(
       renderedComponent.contains(
         <div>movie block</div>

@@ -1,4 +1,4 @@
-import { CHANGE_USERNAME } from './constants';
+const LAST_MOVIES = 'boilerplate/Home/LAST_MOVIES';
 
 // The initial state of the App
 const initialState = {
@@ -7,7 +7,7 @@ const initialState = {
 
 function homeReducer(state = initialState, action) {
   switch (action.type) {
-    case CHANGE_USERNAME:
+    case LAST_MOVIES:
       // Delete prefixed '@' from the github username
       return { ...state, username: action.name.replace(/@/gi, '') };
     default:

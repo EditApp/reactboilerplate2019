@@ -1,0 +1,46 @@
+
+.movieElement {
+  display: inline-block;
+  margin: 10px 0 0 10px;
+  flex-grow: 1;
+  width: calc(100% - 10px - 1px);
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+  img {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+  }
+  .dateTime {
+    position: absolute;
+    z-index: 2;
+    padding: 10px  10px 20px  10px;
+    left: 30px;
+    color: #fff;
+    line-height: .1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Bebas Neue', cursive;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      137deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(255, 112, 2, 1) 0%,
+      rgba(255, 0, 142, 1) 100%
+    );
+  }
+}
+
+
+@media screen and (min-width: 980px) {
+  .movieElement {
+    width: calc(100% * (1 / 4) - 10px - 1px);
+  }
+}
+
+@media screen and (min-width: 780px)  and (max-width: 979px){
+  .movieElement {
+    width: calc(100% * (1 / 2) - 10px - 1px);
+  }
+}
