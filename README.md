@@ -1,7 +1,14 @@
-<img src="https://raw.githubusercontent.com/flexdinesh/react-redux-boilerplate/master/app/components/Header/images/banner.jpg" alt="react redux boilerplate banner" align="center" />
+
+<h1>Dear companies and clients</h1>
+<br />
+<p>I used this minimal React Redux Boilerplate created by Dinesh Pandiyan in odrer to create the technical tests for you.</p>
+<p>Every test has the same technical boilerplate. I create a branch for every technical test and give it a company shortcut name</p>
+<p>You have just to pull the test from your branch</p>
+<p>run npm install</p>
+<p>run npm start</p>
+<p>And Enjoy!</p>
 
 <br />
-
 <div align="center">A minimal, beginner friendly React-Redux boilerplate with all the industry best practices</div>
 
 <br />
