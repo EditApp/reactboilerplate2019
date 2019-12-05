@@ -14,9 +14,7 @@ const MovieItem = ({ title, image, date, description }) => (
     </div>
     <div className="detailsBlock">
       <h2>{title}</h2>
-      <Rating rating={true} />
-      <Star full={true} />
-      <Star full={false} />
+      <Rating />
       <p>{description}</p>
       <Link className="router-link" to="/videodetail">
         Video details

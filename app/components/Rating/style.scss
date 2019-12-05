@@ -1,4 +1,10 @@
+.star-rating {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 
-.rating {
- 
+  .star {
+    max-width: 40px;
+  }
 }
