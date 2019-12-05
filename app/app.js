@@ -27,7 +27,7 @@ import '!file-loader?name=[name].[ext]!./images/favicon.ico';
 // Import CSS reset and Global Styles
 import 'styles/theme.scss';
 
-import configureStore from './configureStore';
+import configureStore from './store/configureStore';
 
 // Import all initialization stuff
 import { registerOpenSans } from './init';
