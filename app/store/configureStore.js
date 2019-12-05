@@ -5,7 +5,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
 import createSagaMiddleware from 'redux-saga';
-import createReducer from './reducers';
+import createReducer from '../store/reducers/reducers';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -37,7 +37,7 @@ export default function configureStore(initialState = {}, history) {
 
   /* istanbul ignore next */
   if (module.hot) {
-    module.hot.accept('./reducers', () => {
+    module.hot.accept('./reducers/reducers', () => {
       store.replaceReducer(createReducer(store.injectedReducers));
       store.dispatch({ type: '@@REDUCER_INJECTED' });
     });

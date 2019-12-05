@@ -20,7 +20,7 @@ const Star = ({ index, full, setFillUp }) => {
       height="3rem"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      fill-rule="evenodd"
+      fillRule="evenodd"
       className="star"
       onMouseEnter={mouseEnter}
       onMouseLeave={mouseLeave}

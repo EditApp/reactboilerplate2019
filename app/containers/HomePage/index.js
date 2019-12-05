@@ -1,19 +1,21 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
-import reducer from './reducer';
-import saga from './saga';
+import reducer from '../../store/reducers/getMoviesReducer';
+import saga from '../../store/saga';
 import HomePage from './HomePage';
+
+//fetching data from api
+import { requestMoviesData } from "../../store/actions/getMoviesActions"
+
+
 
 const mapDispatchToProps = (dispatch) => ({
   
 });
 
-const mapStateToProps = createStructuredSelector({
- 
-});
+const mapStateToProps = state => ({ data: state.data});
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
