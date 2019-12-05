@@ -12,7 +12,7 @@ const Star = ({ index, full, setFillUp }) => {
     e => {
       setFillUp(null);
     },
-    [index, setFillUp]
+    [setFillUp]
   );
   return (
     <svg

@@ -92,7 +92,7 @@ function HomePage() {
       </Helmet>
       <div className="home-page">
         {/*<div>{JSON.stringify(movieslist)}</div>*/}
-        <section classname={'flexboxContainer4cols'}>
+        <section className={'flexboxContainer4cols'}>
           {fakedata.map(movie => (
             <MovieItem
               key={movie.id}
