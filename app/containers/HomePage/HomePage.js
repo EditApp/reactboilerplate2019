@@ -38,18 +38,6 @@ class HomePage extends Component {
   getLatest = e => {
     e.preventDefault();
     console.log('get latest');
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}`
-    )
-      .then(data => data.json())
-      .then(data => {
-        console.log("data");
-        console.log(data);
-        this.setState({
-          movies: [...data.results]
-        });
-      });
-
   };
 
   render() {
