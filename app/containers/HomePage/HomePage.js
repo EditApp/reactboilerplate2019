@@ -10,7 +10,6 @@ import "./style.scss";
 import MovieItem from "../../components/MovieItem";
 import { fakedata } from "./fakeData";
 
-
 function HomePage() {
   return (
     <article>
@@ -22,15 +21,16 @@ function HomePage() {
         />
       </Helmet>
       <div className="home-page">
-        {/*<div>{JSON.stringify(movieslist)}</div>*/}
         <section className={"flexboxContainer4cols"}>
           {fakedata.map(movie => (
             <MovieItem
+              displayfull={false}
+              id={movie.id}
               key={movie.id}
-              title={movie.title}
-              image={movie.coverUrl}
-              date={movie.publicationDate}
-              description={movie.description}
+              title={movie.original_title}
+              image={movie.poster_path}
+              date={movie.release_date}
+              description={movie.overview}
             />
           ))}
         </section>
@@ -40,8 +40,6 @@ function HomePage() {
 }
 
 export default HomePage;
-
-
 
 HomePage.propTypes = {
   loading: PropTypes.bool,

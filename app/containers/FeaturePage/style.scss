@@ -17,3 +17,12 @@
     }
   }
 }
+
+.flexboxContainer1col {
+  display: flex;
+  flex-direction: col;
+    flex-wrap:wrap;
+    margin:-10px 0 0 -10px;
+
+
+}

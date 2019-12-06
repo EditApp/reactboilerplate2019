@@ -6,53 +6,9 @@
   position: relative;
   min-height: 650px;
   overflow: hidden;
-  img {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-  }
-  .dateTime {
-    position: absolute;
-    z-index: 2;
-    padding: 10px 10px 20px 10px;
-    left: 30px;
-    color: #fff;
-    line-height: 0.1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    font-family: "Bebas Neue", cursive;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(
-      137deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(255, 112, 2, 1) 0%,
-      rgba(255, 0, 142, 1) 100%
-    );
-    p {
-      font-family: "Bebas Neue", cursive;
-    }
-  }
-  .detailsBlock {
-    position: absolute;
-    z-index: 2;
-    width: 100%;
-    bottom: 0px;
-    color: #fff;
-    background-color: rgba(2, 0, 36, 0.8);
-    h2,
-    p {
-      margin: 20px;
-    }
-    a.router-link {
-      padding: 30px;
-      background-color: #a21bc2;
-      display: block;
-      font-weight: 600;
-      color: #fff;
-      text-decoration: none;
-      text-transform: uppercase;
-      text-align: center;
-    }
+  &.full {
+    border: 3px solid red;
+    width: 100%
   }
 }
 

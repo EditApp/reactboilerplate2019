@@ -4,22 +4,13 @@ import "./style.scss";
 
 import Rating from "../../components/Rating";
 import Star from "../../components/Icons/star";
+import MovieImage from "../../components/MovieImage";
+import MovieDescription from "../../components/MovieDescription";
 
-const MovieItem = ({ title, image, date, description }) => (
-  <article className="movieElement">
-    <img src={image} />
-    <div className="dateTime">
-      <p>Published</p>
-      <time dateTime={date}>{date}</time>
-    </div>
-    <div className="detailsBlock">
-      <h2>{title}</h2>
-      <Rating />
-      <p>{description}</p>
-      <Link className="router-link" to="/videodetail">
-        Video details
-      </Link>
-    </div>
+const MovieItem = ({ title, image, date, description, id , displayfull}) => (
+  <article className={displayfull ? " movieElement full" : "movieElement"}>
+    <MovieImage image={image} date={date} />
+    <MovieDescription title={title} description={description} id={id} />
   </article>
 );
 
