@@ -8,7 +8,6 @@ import "./style.scss";
 //components
 import MovieItem from "../../components/MovieItem";
 import FormSubmit from "../../components/FormSubmit";
-import { fakedata } from "../../store/fakeData";
 
 class HomePage extends Component {
   constructor() {
@@ -16,14 +15,16 @@ class HomePage extends Component {
     this.state = {
       movies: [],
       searchTerm: "paw-patrol",
-      latest: "latest"
+      language: "en-US",
+      page: '1'
     };
     this.apiKey = "ee2a2cbe04745ba68bf80eb4a82c6296";
+    
+   
   }
-
-  componentDidMount(){
+  componentDidMount() {
     fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}`
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${this.apiKey}&language=${this.state.language}&page=${this.state.page}`
     )
       .then(data => data.json())
       .then(data => {
@@ -33,11 +34,20 @@ class HomePage extends Component {
           movies: [...data.results]
         });
       });
+
+      console.log('componentDidMount')
   }
 
-  getLatest = e => {
-    e.preventDefault();
-    console.log('get latest');
+  getLatest = () => {
+    this.setState(state => {
+      const mmovies = state.movies.reverse()
+      console.log("get latest");
+
+      console.log(mmovies);
+      return {
+        movies: [...mmovies],
+      };
+    });
   };
 
   render() {
@@ -51,9 +61,7 @@ class HomePage extends Component {
           />
         </Helmet>
 
-        <FormSubmit
-          getLatest={this.getLatest}
-        />
+        <FormSubmit getLatest={this.getLatest} />
 
         <div className="home-page">
           <section className={"flexboxContainer4cols"}>

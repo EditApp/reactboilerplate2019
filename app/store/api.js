@@ -30,8 +30,8 @@ export const fetchMoviesData = async () => {
       completeUrl
     );
     const data = await response.json();
-    console.log('data')
-    console.log(data)
+    //console.log('data')
+    //console.log(data)
     return data;
   } catch (e) {
     console.log(e);

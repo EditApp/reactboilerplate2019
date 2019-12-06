@@ -44,10 +44,6 @@ const render = () => {
   ReactDOM.render(
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        {/*makoing request to db api */}
-      
-     
-         {/*   <App2 />*/}
         <App />
       </ConnectedRouter>
     </Provider>,
