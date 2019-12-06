@@ -1,7 +1,7 @@
 
 <h1>Dear companies and clients</h1>
 <br />
-<p>I used this minimal React Redux Boilerplate created by Dinesh Pandiyan in odrer to create the technical tests for you.</p>
+<p>I used this minimal React Redux Boilerplate in odrer to create the technical tests for you.</p>
 <p>Every test has the same technical boilerplate. I create a branch for every technical test and give it a company shortcut name</p>
 <p>You have just to pull the test from your branch</p>
 <p>run npm install</p>
