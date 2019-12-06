@@ -8,7 +8,7 @@ import "./style.scss";
 //components
 
 import MovieItem from "../../components/MovieItem";
-import { fakedata } from "./fakeData";
+import { fakedata } from "../../store/fakeData";
 
 function HomePage() {
   return (

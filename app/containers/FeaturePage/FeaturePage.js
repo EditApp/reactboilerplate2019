@@ -10,7 +10,7 @@ import "./style.scss";
 
 
 import MovieItem from "../../components/MovieItem";
-import { fakedata } from "../HomePage/fakeData";
+import { fakedata } from "../../store/fakeData";
 
 
 function FeaturePage() {
