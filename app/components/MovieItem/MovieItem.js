@@ -1,9 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./style.scss";
 
-import Rating from "../../components/Rating";
-import Star from "../../components/Icons/star";
 import MovieImage from "../../components/MovieImage";
 import MovieDescription from "../../components/MovieDescription";
 

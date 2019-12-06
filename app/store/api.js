@@ -6,6 +6,7 @@
 //show film suggestions
 //get movies list : publication date, title, description, 
 //request example  https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=<<api_key>>&language=en-US
+//https://api.themoviedb.org/3/movie/latest?api_key=ee2a2cbe04745ba68bf80eb4a82c6296
 //mu API key : ee2a2cbe04745ba68bf80eb4a82c6296
 //https://developers.themoviedb.org/3/getting-started/introduction
 
