@@ -15,14 +15,13 @@ class HomePage extends Component {
     super();
     this.state = {
       movies: [],
-      searchTerm: ""
+      searchTerm: "paw-patrol",
+      latest: "latest"
     };
-    //this.apiKey = process.env.REACT_APP_API
     this.apiKey = "ee2a2cbe04745ba68bf80eb4a82c6296";
   }
 
-  handleSubmit = e => {
-    e.preventDefault();
+  componentDidMount(){
     fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}`
     )
@@ -34,13 +33,25 @@ class HomePage extends Component {
           movies: [...data.results]
         });
       });
+  }
+
+  getLatest = e => {
+    e.preventDefault();
+    console.log('get latest');
+    fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}`
+    )
+      .then(data => data.json())
+      .then(data => {
+        console.log("data");
+        console.log(data);
+        this.setState({
+          movies: [...data.results]
+        });
+      });
+
   };
 
-  handleChange = e => {
-    this.setState({
-      searchTerm: e.target.value
-    });
-  };
   render() {
     return (
       <article>
@@ -53,8 +64,7 @@ class HomePage extends Component {
         </Helmet>
 
         <FormSubmit
-          handleSubmit={this.handleSubmit}
-          handleChange={this.handleChange}
+          getLatest={this.getLatest}
         />
 
         <div className="home-page">

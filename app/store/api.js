@@ -15,7 +15,7 @@
 //username : EdytaSkibinska
 //Password : Gouraya13
 //click on API
-
+  
 
 const baseUrl = `https://api.themoviedb.org/3/movie/550?`;
 const apiKey = `ee2a2cbe04745ba68bf80eb4a82c6296`;

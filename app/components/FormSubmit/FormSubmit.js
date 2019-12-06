@@ -1,13 +1,10 @@
 import React from "react";
 import "./style.scss";
 
-const FormSubmit = ({ handleSubmit, handleChange }) => {
+const FormSubmit = ({ getLatest }) => {
   return (
     <div>
-      <form action="" onSubmit={handleSubmit}>
-        <div>
-          <input placeholder="search" type="text" onChange={handleChange}/>
-        </div>
+      <form action="" onSubmit={getLatest}>
         <input type="submit" value="Last Videos" />
       </form>
     </div>
