@@ -47,19 +47,6 @@ class HomePage extends Component {
      });
 
   }
-
-  getLatest = () => {
-    this.setState(state => {
-      const mmovies = state.movies.reverse();
-      console.log("get latest");
-
-      console.log(mmovies);
-      return {
-        movies: [...mmovies]
-      };
-    });
-  };
-
   render() {
     return (
       <article>
@@ -70,14 +57,10 @@ class HomePage extends Component {
             content="A React.js Boilerplate application homepage"
           />
         </Helmet>
-
-        <FormSubmit getLatest={this.getLatest} />
-
         <div className="home-page">
+          {/*TODO - afficher data de store,*/}
           <section>
-            <p>new state new list</p>
             <MoviesList moviesdata={this.props.films.moviesListy} />
-            <p>end new state new list</p>
           </section>
           <section className={"flexboxContainer4cols"}>
             {this.state.movies.map(movie => (
