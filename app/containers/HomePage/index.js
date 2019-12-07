@@ -5,17 +5,23 @@ import injectSaga from 'utils/injectSaga';
 import reducer from '../../store/reducers/getMoviesReducer';
 import saga from '../../store/saga';
 import HomePage from './HomePage';
+/// NEW STORE 
+import { moviesList } from "../../store/actions/movies_actions";
+import { bindActionCreators } from "redux";
 
-//fetching data from api
-import { requestMoviesData } from "../../store/actions/getMoviesActions"
+function mapStateToProps(state){
+    console.log('state')
+    console.log(state)
+    return {
+        films:state.films
+    }
+}
 
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({moviesList},dispatch)
+}
+//  NEW  STORE
 
-
-const mapDispatchToProps = (dispatch) => ({
-  
-});
-
-const mapStateToProps = state => ({ data: state.data});
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 

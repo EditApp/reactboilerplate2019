@@ -9,6 +9,14 @@ import "./style.scss";
 import MovieItem from "../../components/MovieItem";
 import FormSubmit from "../../components/FormSubmit";
 
+//NEW STORE
+import { moviesList } from "../../store/actions/movies_actions";
+import { bindActionCreators } from "redux";
+
+import MoviesList from "../MoviesList";
+
+//NEW STORE
+
 class HomePage extends Component {
   constructor() {
     super();
@@ -16,36 +24,38 @@ class HomePage extends Component {
       movies: [],
       searchTerm: "paw-patrol",
       language: "en-US",
-      page: '1'
+      page: "1"
     };
     this.apiKey = "ee2a2cbe04745ba68bf80eb4a82c6296";
-    
-   
   }
-  componentDidMount() {
-    fetch(
-      `https://api.themoviedb.org/3/movie/upcoming?api_key=${this.apiKey}&language=${this.state.language}&page=${this.state.page}`
-    )
-      .then(data => data.json())
-      .then(data => {
-        console.log("data");
-        console.log(data);
-        this.setState({
-          movies: [...data.results]
-        });
-      });
+  //NEW STORE
 
-      console.log('componentDidMount')
+
+  //NEW STORE
+  componentDidMount() {
+   
+   fetch(
+     `https://api.themoviedb.org/3/movie/upcoming?api_key=${this.apiKey}&language=${this.state.language}&page=${this.state.page}`
+   )
+     .then(data => data.json())
+     .then(data => {
+       console.log("data");
+       console.log(data);
+       this.setState({
+         movies: [...data.results]
+       });
+     });
+
   }
 
   getLatest = () => {
     this.setState(state => {
-      const mmovies = state.movies.reverse()
+      const mmovies = state.movies.reverse();
       console.log("get latest");
 
       console.log(mmovies);
       return {
-        movies: [...mmovies],
+        movies: [...mmovies]
       };
     });
   };
@@ -64,6 +74,11 @@ class HomePage extends Component {
         <FormSubmit getLatest={this.getLatest} />
 
         <div className="home-page">
+          <section>
+            <p>new state new list</p>
+            <MoviesList moviesdata={this.props.films.moviesListy} />
+            <p>end new state new list</p>
+          </section>
           <section className={"flexboxContainer4cols"}>
             {this.state.movies.map(movie => (
               <MovieItem

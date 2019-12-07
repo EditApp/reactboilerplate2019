@@ -5,6 +5,10 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 
+///NEW STORE
+import films from './movies_reducer'
+///NEW STORE
+
 import history from '../../utils/history'
 import globalReducer from '../../containers/App/reducer';
 
@@ -13,6 +17,7 @@ import globalReducer from '../../containers/App/reducer';
  */
 export default function createReducer(injectedReducers = {}) {
   const rootReducer = combineReducers({
+    films,
     global: globalReducer,
     router: connectRouter(history),
     ...injectedReducers,
