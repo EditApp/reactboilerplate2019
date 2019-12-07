@@ -51,6 +51,7 @@ class HomePage extends Component {
           <section className={"flexboxContainer4cols"}>
             {this.state.movies.map(movie => (
               <MovieItem
+              showbutton={true}
                 rating={movie.vote_average}
                 id={movie.id}
                 key={movie.id}

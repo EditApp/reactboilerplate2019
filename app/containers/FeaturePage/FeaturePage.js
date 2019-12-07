@@ -15,7 +15,6 @@ class FeaturePage extends Component {
       page: "1"
     };
     this.apiKey = "ee2a2cbe04745ba68bf80eb4a82c6296";
-  
   }
 
   componentDidMount() {
@@ -44,7 +43,8 @@ class FeaturePage extends Component {
         <section className={"flexboxContainer1col"}>
           {this.state.movies.map(movie => (
             <MovieDetail
-            showlink={false}
+              showbutton={false}
+              rating={movie.vote_average}
               id={movie.id}
               key={movie.id}
               title={movie.original_title}

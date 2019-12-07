@@ -7,18 +7,23 @@
   position: relative;
   overflow: hidden;
   position: relative;
+  margin-bottom: 40px;
+  background-color: #ebebeb;
+  border: 1px solid #f4f4f4;
   .movie-image {
     min-height: auto;
-    width: 50%;
-
     img {
       position: relative;
       width: auto;
       height: 500px;
     }
-    
+    .dateTime {
+      top:0
+    }
   }
   .detailsBlock {
     position: relative;
+    background-color: #fff;
+    color: #000;
   }
 }
