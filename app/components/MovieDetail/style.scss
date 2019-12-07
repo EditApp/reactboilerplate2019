@@ -1,0 +1,24 @@
+.movieDetail {
+  display: inline-flex;
+  flex-direction: row;
+  margin: 10px 0 0 10px;
+  width: calc(100% - 10px - 1px);
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  .movie-image {
+    min-height: auto;
+    width: 50%;
+
+    img {
+      position: relative;
+      width: auto;
+      height: 500px;
+    }
+    
+  }
+  .detailsBlock {
+    position: relative;
+  }
+}

@@ -1,19 +1,5 @@
-import React, { useCallback } from "react";
-
-const Star = ({ index, full, setFillUp }) => {
-  const mouseEnter = useCallback(
-    e => {
-      setFillUp(index);
-    },
-    [index, setFillUp]
-  );
-
-  const mouseLeave = useCallback(
-    e => {
-      setFillUp(null);
-    },
-    [setFillUp]
-  );
+import React from "react";
+const Star = ({ full }) => {
   return (
     <svg
       version="1.1"
@@ -22,8 +8,6 @@ const Star = ({ index, full, setFillUp }) => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       fillRule="evenodd"
       className="star"
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseLeave}
     >
       <g transform="scale(.95) translate(15,15)">
         <path

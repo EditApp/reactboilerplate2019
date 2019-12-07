@@ -1,32 +1,50 @@
-/*
- * FeaturePage
- *
- * List all the features
- */
-import React from "react";
+import React, { Component, useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import "./style.scss";
 
-
-
-import MovieItem from "../../components/MovieItem";
+import MovieDetail from "../../components/MovieDetail";
 import { fakedata } from "../../store/fakeData";
 
+class FeaturePage extends Component {
+  constructor() {
+    super();
+    this.state = {
+      movies: [],
+      searchTerm: "paw-patrol",
+      language: "en-US",
+      page: "1"
+    };
+    this.apiKey = "ee2a2cbe04745ba68bf80eb4a82c6296";
+  
+  }
 
-function FeaturePage() {
-  return (
-    <>
-      <Helmet>
-        <title>Feature Page</title>
-        <meta
-          name="description"
-          content="Feature page of React.js Boilerplate application"
-        />
-      </Helmet>
-      <section className={"flexboxContainer1col"}>
-          {fakedata.map(movie => (
-            <MovieItem
-              displayfull={true}
+  componentDidMount() {
+    fetch(
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${this.apiKey}&language=${this.state.language}&page=${this.state.page}`
+    )
+      .then(data => data.json())
+      .then(data => {
+        console.log("data");
+        console.log(data);
+        this.setState({
+          movies: [...data.results]
+        });
+      });
+  }
+  render() {
+    return (
+      <>
+        <Helmet>
+          <title>Feature Page</title>
+          <meta
+            name="description"
+            content="Feature page of React.js Boilerplate application"
+          />
+        </Helmet>
+        <section className={"flexboxContainer1col"}>
+          {this.state.movies.map(movie => (
+            <MovieDetail
+            showlink={false}
               id={movie.id}
               key={movie.id}
               title={movie.original_title}
@@ -36,8 +54,9 @@ function FeaturePage() {
             />
           ))}
         </section>
-    </>
-  );
+      </>
+    );
+  }
 }
 
 export default FeaturePage;

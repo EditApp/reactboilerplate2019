@@ -5,17 +5,8 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import "./style.scss";
 
-//components
 import MovieItem from "../../components/MovieItem";
-import FormSubmit from "../../components/FormSubmit";
-
-//NEW STORE
-import { moviesList } from "../../store/actions/movies_actions";
-import { bindActionCreators } from "redux";
-
 import MoviesList from "../MoviesList";
-
-//NEW STORE
 
 class HomePage extends Component {
   constructor() {
@@ -28,24 +19,19 @@ class HomePage extends Component {
     };
     this.apiKey = "ee2a2cbe04745ba68bf80eb4a82c6296";
   }
-  //NEW STORE
 
-
-  //NEW STORE
   componentDidMount() {
-   
-   fetch(
-     `https://api.themoviedb.org/3/movie/upcoming?api_key=${this.apiKey}&language=${this.state.language}&page=${this.state.page}`
-   )
-     .then(data => data.json())
-     .then(data => {
-       console.log("data");
-       console.log(data);
-       this.setState({
-         movies: [...data.results]
-       });
-     });
-
+    fetch(
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${this.apiKey}&language=${this.state.language}&page=${this.state.page}`
+    )
+      .then(data => data.json())
+      .then(data => {
+        console.log("data");
+        console.log(data);
+        this.setState({
+          movies: [...data.results]
+        });
+      });
   }
   render() {
     return (
@@ -65,7 +51,7 @@ class HomePage extends Component {
           <section className={"flexboxContainer4cols"}>
             {this.state.movies.map(movie => (
               <MovieItem
-                displayfull={false}
+                rating={movie.vote_average}
                 id={movie.id}
                 key={movie.id}
                 title={movie.original_title}

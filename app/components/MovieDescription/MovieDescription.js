@@ -4,15 +4,17 @@ import { Link } from "react-router-dom";
 
 import Rating from "../../components/Rating";
 
-const MovieDescription = ({ title, description, id}) => (
+const MovieDescription = ({ title, description, id, showlink , rating}) => (
   <div className="detailsBlock">
-      <h2>{title}</h2>
-      <Rating />
-      <p>{description}</p>
+    <h2>{title}</h2>
+    <Rating rating={rating}/>
+    <p>{description}</p>
+    {showlink ? (
       <Link className="router-link" to={`/videodetail/${id}`}>
         Video details
       </Link>
-    </div>
+    ) : null}
+  </div>
 );
 
 export default MovieDescription;

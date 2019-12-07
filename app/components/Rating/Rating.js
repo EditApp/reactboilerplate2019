@@ -2,24 +2,18 @@ import React, { useState } from "react";
 import "./style.scss";
 import Star from "../../components/Icons/star";
 
-const Rating = () => {
-  //const [fillUp, setFillUp] = useState(null);
-
+const Rating = ({ rating }) => {
   return (
     <article className="star-rating">
-      <Star full={true} />
-      <Star full={true} />
-      <Star full={false} />
-      <Star full={false} />
-      <Star full={false} />
-      {/*[1, 2, 3, 4, 5].map(item => {
-        <Star
-          key={item}
-          index={item}
-          full={item <= (fillUp || rating || 0)}
-          setFillUp={setFillUp}
-        />;
-      })*/}
+      {[1, 2, 3, 4, 5].map(item => {
+        return (
+          <Star
+            key={item}
+            index={item}
+            full={item <= ((rating /2) || 0)}
+          />
+        );
+      })}
     </article>
   );
 };
