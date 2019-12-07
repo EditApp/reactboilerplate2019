@@ -23,14 +23,18 @@ class FeaturePage extends Component {
     )
       .then(data => data.json())
       .then(data => {
-        console.log("data");
-        console.log(data);
+        console.log("data.results");
+        console.log(data.results);
+
+        const currentId = this.props.location.pathname.slice(13);
+  
         this.setState({
           movies: [...data.results]
         });
       });
   }
   render() {
+
     return (
       <>
         <Helmet>
@@ -41,6 +45,8 @@ class FeaturePage extends Component {
           />
         </Helmet>
         <section className={"flexboxContainer1col"}>
+          {console.log("return this.state.movies")}
+          {console.log(this.state.movies)}
           {this.state.movies.map(movie => (
             <MovieDetail
               showbutton={false}

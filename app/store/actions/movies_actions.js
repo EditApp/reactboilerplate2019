@@ -15,4 +15,20 @@ export function moviesList() {
     payload: request
   };
 }
+
+export function moviesDetail() {
+  const request = axios
+    .get(`${URL}/upcoming?api_key=${API_KEY}&language=${LANG}&page=${PAGE}`)
+    .then(response => response.data);
+  //code a l'aveugle de ce genre:
+  //recuperer l'id de route
+  const movieId = router.location.pathname.slice(13);
+  function currentId(item) { 
+    return item.id === movieId;
+  }
+  return {
+    type: "GET_MOVIES",
+    payload: request.find(currentId)
+  };
+}
 /// NEW STORE

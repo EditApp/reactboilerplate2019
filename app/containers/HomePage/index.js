@@ -6,7 +6,7 @@ import reducer from "../../store/reducers/getMoviesReducer";
 import saga from "../../store/saga";
 import HomePage from "./HomePage";
 /// NEW STORE
-import { moviesList } from "../../store/actions/movies_actions";
+import { moviesList, moviesDetail } from "../../store/actions/movies_actions";
 import { bindActionCreators } from "redux";
 
 function mapStateToProps(state) {
@@ -18,7 +18,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ moviesList }, dispatch);
+  return bindActionCreators({ moviesList, moviesDetail }, dispatch);
 }
 //  NEW  STORE
 
